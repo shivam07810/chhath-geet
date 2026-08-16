@@ -14,7 +14,7 @@ const songs = [
   {
     title: "उग हो सुरुज देव",
     artist: "Sharda Sinha",
-    file: "surujdev.mp3"
+    file: "surajdev.mp3"
   }
 ];
 
