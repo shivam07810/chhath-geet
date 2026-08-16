@@ -19,3 +19,10 @@ function format(sec) {
     if (s < 10) s = "0" + s;
     return min + ":" + s;
 }
+time.innerHTML = new Date().toLocaleTimeString("en-IN", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true
+});
+updateClock();
+setInterval(updateClock, 1000);
