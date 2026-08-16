@@ -11,6 +11,11 @@ const songs = [
     artist: "Anuradha Paudwal",
     file: "bahangiya.mp3"
   },
+    {
+    title: "उग हो सुरुज देव",
+    artist: "Sharda Sinha",
+    file: "surajdev.mp3"
+    },
   {
     title: "उग हो सुरुज देव",
     artist: "Sharda Sinha",
