@@ -39,3 +39,16 @@ function playPause() {
 }
 
 //
+audio.addEventListener("loadedmetadata", () => {
+  progress.max = Math.floor(audio.duration);
+  duration.textContent = format(audio.duration);
+});
+
+audio.addEventListener("timeupdate", () => {
+  progress.value = Math.floor(audio.currentTime);
+  current.textContent = format(audio.currentTime);
+});
+
+progress.addEventListener("input", function () {
+  audio.currentTime = this.value;
+});
