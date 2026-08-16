@@ -22,11 +22,14 @@ function format(sec) {
 const time = document.getElementById("time");
 
 function updateClock() {
-    time.innerHTML = new Date().toLocaleTimeString("en-IN", {
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: true
-    });
+    const time = document.getElementById("time");
+    if (time) {
+        time.textContent = new Date().toLocaleTimeString("en-IN", {
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true
+        });
+    }
 }
 
 updateClock();
