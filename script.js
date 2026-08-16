@@ -69,13 +69,16 @@ function nextSong() {
     }
 
     loadSong(currentSong);
+    audio.play();
+    playBtn.innerHTML = "⏸";
+}
+    loadSong(currentSong);
 
     audio.onloadedmetadata = () => {
         audio.play();
         playBtn.innerHTML = "⏸";
     };
 }
-
     loadSong(currentSong);
     audio.play();
     playBtn.innerHTML = "⏸";
@@ -88,17 +91,16 @@ function prevSong() {
     }
 
     loadSong(currentSong);
+    audio.play();
+    playBtn.innerHTML = "⏸";
+}
+
+    loadSong(currentSong);
 
     audio.onloadedmetadata = () => {
         audio.play();
         playBtn.innerHTML = "⏸";
     };
-}
-
-
-    loadSong(currentSong);
-    audio.play();
-    playBtn.innerHTML = "⏸";
 }
 
 // Song khatam hone par next song chalega
