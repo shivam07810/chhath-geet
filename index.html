@@ -3,43 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>जय छठी मैया</title>
 
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
+<div class="bg"></div>
+
 <div class="overlay">
 
 <div class="top">
+
 <div id="time">06:22 AM</div>
+
+<div class="icons">
+🎵
 </div>
 
-<div class="title">
+</div>
+
+<div class="center">
+
 <h1>जय छठी मैया</h1>
+
 <p>छठी मइया के सभी भक्ति गीत</p>
+
 </div>
 
 <div class="player">
 
+<div class="left">
+
 <img src="chhath.png" class="cover">
-<div class="song">
-<h2>काँच ही बांस के बहंगिया</h2>
+
+<div>
+
+<h3>छठ पूजा: काँच ही बाँस के बहंगिया</h3>
+
 <p>Anuradha Paudwal</p>
+
+</div>
+
 </div>
 
 <audio id="audio" src="bahangiya.mp3"></audio>
 
 <input type="range" id="progress" value="0">
 
+<div class="time">
+
+<span id="current">0:00</span>
+
+<span id="duration">0:00</span>
+
+</div>
+
 <div class="controls">
 
 <button onclick="prevSong()">⏮</button>
 
-<button onclick="playPause()" id="play">
-▶
-</button>
+<button onclick="playPause()" id="playBtn">▶</button>
 
 <button onclick="nextSong()">⏭</button>
 
@@ -52,4 +79,5 @@
 <script src="script.js"></script>
 
 </body>
+
 </html>
