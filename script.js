@@ -20,20 +20,24 @@ const songs = [
 
 let currentSong = 0;
 
-// Song Load
+// Load Song
 function loadSong(index) {
   audio.src = songs[index].file;
+
   document.querySelector(".left h3").textContent = songs[index].title;
   document.querySelector(".left p").textContent = songs[index].artist;
+
   audio.load();
 }
 
 loadSong(currentSong);
 
-// Duration
+// Metadata
 audio.addEventListener("loadedmetadata", () => {
-  progress.max = Math.floor(audio.duration);
-  duration.textContent = format(audio.duration);
+  if (!isNaN(audio.duration)) {
+    progress.max = Math.floor(audio.duration);
+    duration.textContent = format(audio.duration);
+  }
 });
 
 // Progress
@@ -47,15 +51,17 @@ progress.addEventListener("input", () => {
   audio.currentTime = progress.value;
 });
 
-// Time Format
+// Format
 function format(sec) {
   if (isNaN(sec)) return "0:00";
+
   let min = Math.floor(sec / 60);
   let s = Math.floor(sec % 60);
-  return min + ":" + String(s).padStart(2, "0");
+
+  return min + ":" + (s < 10 ? "0" + s : s);
 }
 
-// Play / Pause
+// Play Pause
 function playPause() {
   if (audio.paused) {
     audio.play();
@@ -66,37 +72,45 @@ function playPause() {
   }
 }
 
-// Next
+// Next Song
 function nextSong() {
-  currentSong = (currentSong + 1) % songs.length;
+  currentSong++;
+
+  if (currentSong >= songs.length) {
+    currentSong = 0;
+  }
+
   loadSong(currentSong);
 
-  audio.addEventListener(
-    "canplay",
-    function () {
-      audio.play();
-      playBtn.innerHTML = "⏸";
-    },
-    { once: true }
-  );
+  audio.onloadedmetadata = function () {
+    progress.max = Math.floor(audio.duration);
+    duration.textContent = format(audio.duration);
+
+    audio.play();
+    playBtn.innerHTML = "⏸";
+  };
 }
 
-// Previous
+// Previous Song
 function prevSong() {
-  currentSong = (currentSong - 1 + songs.length) % songs.length;
+  currentSong--;
+
+  if (currentSong < 0) {
+    currentSong = songs.length - 1;
+  }
+
   loadSong(currentSong);
 
-  audio.addEventListener(
-    "canplay",
-    function () {
-      audio.play();
-      playBtn.innerHTML = "⏸";
-    },
-    { once: true }
-  );
+  audio.onloadedmetadata = function () {
+    progress.max = Math.floor(audio.duration);
+    duration.textContent = format(audio.duration);
+
+    audio.play();
+    playBtn.innerHTML = "⏸";
+  };
 }
 
-// Auto Next
+// Song End
 audio.addEventListener("ended", nextSong);
 
 // Clock
