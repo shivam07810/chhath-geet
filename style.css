@@ -170,3 +170,22 @@ height:75px;
 font-size:32px;
 
 }
+.follow-btn{
+    display:block;
+    width:220px;
+    margin:20px auto;
+    padding:14px 20px;
+    text-align:center;
+    text-decoration:none;
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:30px;
+    background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
+    box-shadow:0 8px 20px rgba(0,0,0,.3);
+    transition:.3s;
+}
+
+.follow-btn:hover{
+    transform:scale(1.05);
+}
