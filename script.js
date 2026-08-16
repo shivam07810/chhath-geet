@@ -61,7 +61,6 @@ function playPause() {
     }
 }
 
-// Next Song
 function nextSong() {
     currentSong++;
 
@@ -70,17 +69,32 @@ function nextSong() {
     }
 
     loadSong(currentSong);
+
+    audio.onloadedmetadata = () => {
+        audio.play();
+        playBtn.innerHTML = "⏸";
+    };
+}
+
+    loadSong(currentSong);
     audio.play();
     playBtn.innerHTML = "⏸";
 }
-
-// Previous Song
 function prevSong() {
     currentSong--;
 
     if (currentSong < 0) {
         currentSong = songs.length - 1;
     }
+
+    loadSong(currentSong);
+
+    audio.onloadedmetadata = () => {
+        audio.play();
+        playBtn.innerHTML = "⏸";
+    };
+}
+
 
     loadSong(currentSong);
     audio.play();
