@@ -22,7 +22,7 @@ const songs = [
     file: "patnakeghatwa.mp3"
   },
   {
-    title: "Patna ke ghataba pe",
+    title: "Patna ke ghtaba pe",
     artist: "chhaila bihari",
     file: "patnakeghatwa.mp3"
 }
