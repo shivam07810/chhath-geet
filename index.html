@@ -3,24 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chhath Geet</title>
+<title>जय छठी मैया</title>
+
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>🌅 Chhath Geet</h1>
-<p>छठी मईया के सभी भक्ति गीत</p>
+<div class="overlay">
 
-<div class="card">
-<img src="https://picsum.photos/400/250" width="100%">
-<h3>असिया पुरान हो</h3>
+<div class="top">
+<div id="time">06:22 AM</div>
+</div>
 
-<audio controls>
-<source src="bahangiya.mp3" type="audio/mpeg">
-</audio>
+<div class="title">
+<h1>जय छठी मैया</h1>
+<p>छठी मइया के सभी भक्ति गीत</p>
+</div>
+
+<div class="player">
+
+<img src="cover.jpg" class="cover">
+
+<div class="song">
+<h2>काँच ही बांस के बहंगिया</h2>
+<p>Anuradha Paudwal</p>
+</div>
+
+<audio id="audio" src="bahangiya.mp3"></audio>
+
+<input type="range" id="progress" value="0">
+
+<div class="controls">
+
+<button onclick="prevSong()">⏮</button>
+
+<button onclick="playPause()" id="play">
+▶
+</button>
+
+<button onclick="nextSong()">⏭</button>
 
 </div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
