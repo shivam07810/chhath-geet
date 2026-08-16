@@ -22,10 +22,10 @@ const songs = [
     file: "patnakeghatwa.mp3"
   },
   {
-    title: "Patna ke ghtaba pe",
-    artist: "chhaila bihari",
-    file: "patnakeghatwa.mp3"
-}
+    title: "Patna ke Ghataba Pe",
+    artist: "Chhaila Bihari",
+    file: "patnakeghtwa.mp3"
+  }
 ];
 
 let currentSong = 0;
