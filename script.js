@@ -22,7 +22,7 @@ const songs = [
     file: "patnakeghatwa.mp3"
   },
   {
-    title: "Patna ke Ghataba Pe",
+    title: "Patna ke Ghtaba Pe",
     artist: "Chhaila Bihari",
     file: "patnakeghtwa.mp3"
   }
@@ -92,13 +92,17 @@ function nextSong() {
 
   loadSong(currentSong);
 
-  audio.onloadedmetadata = function () {
-    progress.max = Math.floor(audio.duration);
-    duration.textContent = format(audio.duration);
+  function nextSong() {
+    currentSong++;
 
+    if (currentSong >= songs.length) {
+        currentSong = 0;
+    }
+
+    loadSong(currentSong);
     audio.play();
     playBtn.innerHTML = "⏸";
-  };
+  }
 }
 
 // Previous Song
