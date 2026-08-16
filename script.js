@@ -20,6 +20,7 @@ const songs = [
 
 let currentSong = 0;
 
+// Song Load
 function loadSong(index) {
     audio.src = songs[index].file;
     document.querySelector(".left h3").textContent = songs[index].title;
@@ -29,20 +30,24 @@ function loadSong(index) {
 
 loadSong(currentSong);
 
+// Metadata
 audio.addEventListener("loadedmetadata", () => {
     progress.max = Math.floor(audio.duration);
     duration.textContent = format(audio.duration);
 });
 
+// Progress
 audio.addEventListener("timeupdate", () => {
     progress.value = Math.floor(audio.currentTime);
     current.textContent = format(audio.currentTime);
 });
 
+// Seek
 progress.addEventListener("input", () => {
     audio.currentTime = progress.value;
 });
 
+// Time Format
 function format(sec) {
     if (isNaN(sec)) return "0:00";
     let min = Math.floor(sec / 60);
@@ -50,7 +55,8 @@ function format(sec) {
     if (s < 10) s = "0" + s;
     return min + ":" + s;
 }
-// Play / Pause
+
+// Play Pause
 function playPause() {
     if (audio.paused) {
         audio.play();
@@ -61,6 +67,7 @@ function playPause() {
     }
 }
 
+// Next Song
 function nextSong() {
     currentSong++;
 
@@ -69,53 +76,17 @@ function nextSong() {
     }
 
     loadSong(currentSong);
-    audio.play();
-    playBtn.innerHTML = "⏸";
-}
-    loadSong(currentSong);
 
-    audio.onloadedmetadata = () => {
+    audio.onloadeddata = () => {
         audio.play();
         playBtn.innerHTML = "⏸";
     };
 }
-    loadSong(currentSong);
-    audio.play();
-    playBtn.innerHTML = "⏸";
-}
+
+// Previous Song
 function prevSong() {
     currentSong--;
 
     if (currentSong < 0) {
         currentSong = songs.length - 1;
     }
-
-    loadSong(currentSong);
-    audio.play();
-    playBtn.innerHTML = "⏸";
-}
-
-    loadSong(currentSong);
-
-    audio.onloadedmetadata = () => {
-        audio.play();
-        playBtn.innerHTML = "⏸";
-    };
-}
-
-// Song khatam hone par next song chalega
-audio.addEventListener("ended", () => {
-    nextSong();
-});
-
-// Clock
-function updateClock() {
-    time.textContent = new Date().toLocaleTimeString("en-IN", {
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: true
-    });
-}
-
-updateClock();
-setInterval(updateClock, 1000);
