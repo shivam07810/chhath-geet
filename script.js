@@ -16,6 +16,12 @@ const songs = [
     artist: "Sharda Sinha",
     file: "surajdev.mp3"
     },
+  
+    {
+    title: "Patna ke ghtwa pe",
+    artist: "Chhaila bihari",
+    file: "patnakeghtwa.mp3"
+    },
 ];
 
 let currentSong = 0;
