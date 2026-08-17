@@ -16,16 +16,6 @@ const songs = [
     artist: "Sharda Sinha",
     file: "surajdev.mp3"
     },
-  {
-    title: "Patna ke ghataba pe",
-    artist: "chhaila bihari",
-    file: "patnakeghatwa.mp3"
-  },
-  {
-    title: "Patna ke Ghtaba Pe",
-    artist: "Chhaila Bihari",
-    file: "patnakeghtwa.mp3"
-  }
 ];
 
 let currentSong = 0;
