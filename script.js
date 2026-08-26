@@ -79,15 +79,6 @@ function playPause() {
 
 // Next Song
 function nextSong() {
-  currentSong++;
-
-  if (currentSong >= songs.length) {
-    currentSong = 0;
-  }
-
-  loadSong(currentSong);
-
-  function nextSong() {
     currentSong++;
 
     if (currentSong >= songs.length) {
@@ -97,7 +88,6 @@ function nextSong() {
     loadSong(currentSong);
     audio.play();
     playBtn.innerHTML = "⏸";
-  }
 }
 
 // Previous Song
