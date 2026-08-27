@@ -26,6 +26,11 @@ const songs = [
     artist: "Pawan Singh",
     file: "jodejodephalwa.mp3"
   },
+  {
+    title: "kelwa ke patba pe",
+    artist: "Pawan Singh",
+    file: "kelwakepata.mp3"
+  },
 ];
 
 let currentSong = 0;
