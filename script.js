@@ -4,7 +4,6 @@ const current = document.getElementById("current");
 const duration = document.getElementById("duration");
 const playBtn = document.getElementById("playBtn");
 const time = document.getElementById("time");
-
 const songs = [
   {
     title: "छठ पूजा: काँच ही बाँस के बहंगिया",
@@ -26,27 +25,21 @@ const songs = [
     artist: "Pawan Singh",
     file: "jodejodephalwa.mp3"
   },
-  {
+   {
     title: "kelwa ke patba pe",
     artist: "Pawan Singh",
     file: "kelwakepata.mp3"
-  },
+   },
 ];
-
 let currentSong = 0;
-
 // Load Song
 function loadSong(index) {
   audio.src = songs[index].file;
-
   document.querySelector(".left h3").textContent = songs[index].title;
   document.querySelector(".left p").textContent = songs[index].artist;
-
   audio.load();
 }
-
 loadSong(currentSong);
-
 // Metadata
 audio.addEventListener("loadedmetadata", () => {
   if (!isNaN(audio.duration)) {
