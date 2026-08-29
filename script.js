@@ -20,11 +20,6 @@ const songs = [
     artist: "Chhaila bihari",
     file: "patnakeghtwa.mp3"
     },
-  {
-    title: "जोड़े जोड़े फलवा",
-    artist: "Pawan Singh",
-    file: "jodejodephalwa.mp3"
-  },
    {
     title: "kelwa ke patba pe",
     artist: "Pawan Singh",
